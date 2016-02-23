@@ -3,23 +3,16 @@ package com.appium.NativeApps;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-
-import java.net.URL;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
-/**
- * Hello world!
- * 
- */
+import java.net.URL;
+
+
 public class Calculator {
 
 	private AppiumDriver<AndroidElement> driver;
