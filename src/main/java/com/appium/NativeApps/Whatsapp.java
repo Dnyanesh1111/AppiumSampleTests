@@ -3,7 +3,10 @@ package com.appium.NativeApps;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.URL;
@@ -16,7 +19,7 @@ public class Whatsapp {
 	
 	private AppiumDriver<AndroidElement> driver;
 
-	@Test
+	@BeforeTest
 			public void WhatsApp() throws Exception {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 		    capabilities.setCapability("deviceName","OnePlus2");
@@ -24,7 +27,13 @@ public class Whatsapp {
 		    capabilities.setCapability("appPackage", "com.whatsapp");
 		    capabilities.setCapability("appActivity", "com.whatsapp.Main");
 		    driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
-		    driver.quit();
+	}
+
+
+
+	@AfterTest
+		public void closeApp() throws Exception {
+		driver.quit();
 	}
 
 }
